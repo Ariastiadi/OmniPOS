@@ -61,12 +61,12 @@ jobs:
       - name: Name the file
         run: |
           mkdir -p dist
-          cp android/app/build/outputs/apk/release/app-release.apk "dist/OmniTill-${{ steps.ver.outputs.name }}.apk"
+          cp android/app/build/outputs/apk/release/app-release.apk "dist/OmniPOS-${{ steps.ver.outputs.name }}.apk"
           sha256sum dist/*.apk | tee dist/SHA256SUMS.txt
 
       - uses: actions/upload-artifact@v4
         with:
-          name: OmniTill-apk
+          name: OmniPOS-apk
           path: dist/*
 
       - name: Attach to the GitHub release
@@ -74,5 +74,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --title "OmniTill ${{ steps.ver.outputs.name }}" --generate-notes
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --title "Omni POS ${{ steps.ver.outputs.name }}" --generate-notes
           gh release upload "$GITHUB_REF_NAME" dist/*.apk dist/SHA256SUMS.txt --clobber
