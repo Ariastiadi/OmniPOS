@@ -1,12 +1,12 @@
-# OmniTill for Android
+# Omni POS for Android
 
-A small native shell around the OmniTill website. The website is bundled inside the APK and served from a private
+A small native shell around the Omni POS website. The website is bundled inside the APK and served from a private
 https address, so the app opens instantly, works offline, and does not need Chrome. Sales still go straight to your own
 Supabase project. The app has only the internet permission, no analytics and no ads, and Android backup is switched off.
 
 ## Get the APK
 
-- **GitHub Releases:** download `OmniTill-x.y.z.apk` from the latest release.
+- **GitHub Releases:** download `OmniPOS-x.y.z.apk` from the latest release.
 - **Obtainium:** add this repository's URL. It follows new releases by itself.
 - Check the file with `SHA256SUMS.txt` from the same release.
 
@@ -20,7 +20,7 @@ app. You create that key once and keep it forever.
    ```bash
    keytool -genkeypair -v -storetype PKCS12 -keystore omnitill-release.p12 \
      -alias omnitill -keyalg RSA -keysize 4096 -validity 36500 \
-     -dname "CN=OmniTill, O=Your name"
+     -dname "CN=Omni POS, O=Your name"
    ```
 
 2. Turn it into text so GitHub can store it:
