@@ -32,7 +32,7 @@ export async function render(view) {
           h('div', { class: 'list-item' }, h('span', null, 'Remove PIN'), h('button', { class: 'btn sm danger', onclick: async () => { if (await confirmBox('Remove the PIN?', 'This device will no longer lock itself.', 'Remove', true)) { clearPin(); rearmIdle(); rerouteAfterRoleChange(); } } }, 'Remove'))) : null),
       can('admin') ? h('div', null, h('div', { class: 'sep' }), businessCard()) : null,
       h('div', { class: 'sep' }),
-      h('div', { class: 'card' }, h('h3', null, 'About'), h('p', { class: 'muted' }, 'OmniTill is free software. Data lives in your own Supabase project. The code never sends it anywhere else.'),
+      h('div', { class: 'card' }, h('h3', null, 'About'), h('p', { class: 'muted' }, 'Omni POS is free software. Data lives in your own Supabase project. The code never sends it anywhere else.'),
         h('div', { class: 'list-item' }, h('span', null, 'Database'), h('span', { class: 'muted' }, S.cfg?.url?.replace(/^https?:\/\//, ''))),
         h('div', { class: 'list-item' }, h('span', null, 'Version'), h('span', { class: 'muted num' }, '1.0.0'))));
   }

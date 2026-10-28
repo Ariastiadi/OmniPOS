@@ -77,7 +77,7 @@ export async function render(view) {
         const head = ['receipt', 'date_time', 'type', 'table', 'guest', 'payment', 'subtotal', 'discount', 'service', 'tax', 'total', 'status', 'cashier', 'items'];
         const lines = [head.join(',')].concat(inR.map((r) => [r.no, r.created_at, r.channel, r.table_no, r.guest_name, r.method, r.subtotal, r.discount, r.service, r.tax, r.total, r.status, r.cashier_name,
           r.sale_items.map((i) => `${i.qty}x ${i.name}`).join('; ')].map(csvCell).join(',')));
-        download(`omnitill-sales-${st.from}_${st.to}.csv`, lines.join('\r\n'));
+        download(`omni-pos-sales-${st.from}_${st.to}.csv`, lines.join('\r\n'));
         toast(`${inR.length} sales exported`, 'ok');
       } catch (er) { toast(errText(er), 'error'); }
     });
