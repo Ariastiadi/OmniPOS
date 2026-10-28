@@ -14,7 +14,7 @@ It works offline, syncs between devices in real time, and keeps your data in **y
 
 Omni POS is a ground-up rewrite of the earlier SENJA POS (Firebase). It no longer uses Firebase or any Google service.
 
-**[Open the web app](https://ariastiadi.github.io/OmniPOS/)** · **[Download the APK](https://github.com/Ariastiadi/OmniPOS/releases/latest)** · **[Add to Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.omnitill%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FAriastiadi%2FOmniPOS%22%2C%22author%22%3A%22Ariastiadi%22%2C%22name%22%3A%22Omni%20POS%22%7D)**
+**[Open the web app](https://ariastiadi.github.io/OmniPOS/)** · **[Download the APK](https://github.com/Ariastiadi/OmniPOS/releases/latest)** · **[Add to Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.omnitill%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FAriastiadi%2FOmniPOS%22%2C%22author%22%3A%22Ariastiadi%22%2C%22name%22%3A%22Omni%20POS%22%7D)** · **[Open in Komi Store](https://github-store.org/app/?repo=Ariastiadi/OmniPOS)**
 
 ## Screenshots
 
