@@ -1,6 +1,6 @@
 {
-  "name": "OmniTill",
-  "short_name": "OmniTill",
+  "name": "Omni POS",
+  "short_name": "Omni POS",
   "description": "Point of sale for cafes and small hotels. Works offline and syncs across devices.",
   "id": "/",
   "start_url": "./index.html",
