@@ -1,5 +1,5 @@
 -- =============================================================================
--- OmniTill sample data (optional). Run AFTER schema.sql, in the SQL Editor.
+-- Omni POS sample data (optional). Run AFTER schema.sql, in the SQL Editor.
 -- Safe to run twice: existing rows are left alone.
 -- Prices are in IDR. Change them in the app (Menu screen) afterwards.
 -- =============================================================================

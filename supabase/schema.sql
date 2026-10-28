@@ -1,5 +1,5 @@
 -- =============================================================================
--- OmniTill database schema (Supabase / PostgreSQL 15+)
+-- Omni POS database schema (Supabase / PostgreSQL 15+)
 --
 -- How to run: Supabase Dashboard > SQL Editor > New query > paste all > Run.
 -- Safe to run again after an update (idempotent).
@@ -80,7 +80,7 @@ create trigger profiles_guard_trg before update on public.profiles
 -- -----------------------------------------------------------------------------
 create table if not exists public.business (
   id             int primary key default 1 check (id = 1),
-  name           text not null default 'OmniTill',
+  name           text not null default 'Omni POS',
   address        text not null default '',
   phone          text not null default '',
   currency       text not null default 'IDR',
