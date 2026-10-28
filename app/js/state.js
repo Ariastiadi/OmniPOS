@@ -1,7 +1,7 @@
 // Shared app state with a minimal event bus.
 export const S = {
   cfg: null, sb: null, session: null, profile: null,
-  business: { name: 'OmniTill', currency: 'IDR', locale: 'id-ID', timezone: 'Asia/Jakarta', tax_rate: 0, service_rate: 0, receipt_footer: '', hotel_enabled: true, updated_at: null },
+  business: { name: 'Omni POS', currency: 'IDR', locale: 'id-ID', timezone: 'Asia/Jakarta', tax_rate: 0, service_rate: 0, receipt_footer: '', hotel_enabled: true, updated_at: null },
   categories: [], products: [], rooms: [], bookings: [], ingredients: [], shift: null,
   online: navigator.onLine, outbox: 0, rejected: 0, lastSync: null,
 };

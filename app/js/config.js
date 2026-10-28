@@ -1,4 +1,4 @@
-// Pre-connected to the OmniTill Supabase project, so the app opens straight to sign-in.
+// Pre-connected to the Omni POS Supabase project, so the app opens straight to sign-in.
 // Both values are PUBLIC by design (the anon key is safe in a browser; Row Level Security protects the data).
 // NEVER put the service_role key here. Clear both values to ask for them on first launch instead.
 export default {

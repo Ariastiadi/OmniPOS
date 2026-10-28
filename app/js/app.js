@@ -40,7 +40,7 @@ function showSetup(msg) {
     try { localStorage.setItem(CFG_KEY, JSON.stringify({ url: u.origin, anonKey: k })); } catch { return (err.textContent = 'Storage is blocked in this browser.'); }
     boot();
   } },
-  h('span', { class: 'brand' }, 'OMNI', h('i', null, 'TILL')),
+  h('span', { class: 'brand' }, 'OMNI', h('i', null, 'POS')),
   h('h2', null, 'Connect to your database'),
   h('p', { class: 'muted' }, 'Paste the Project URL and the anon (public) key from Supabase: Project settings, API. See the README for the one-time setup.'),
   field('Project URL', url), field('Anon key', key), err,
@@ -67,7 +67,7 @@ function showAuth(note) {
         } catch (ex) { err.textContent = /invalid login/i.test(ex.message) ? 'Wrong email or password.' : errText(ex); }
       });
     } },
-    h('span', { class: 'brand' }, 'OMNI', h('i', null, 'TILL')),
+    h('span', { class: 'brand' }, 'OMNI', h('i', null, 'POS')),
     h('h2', null, mode === 'in' ? 'Sign in to continue' : 'Create your account'),
     mode === 'up' ? field('Your name', name) : null,
     field('Email', email), field(mode === 'in' ? 'Password' : 'Password (8+ characters)', pass), err, btn,
@@ -85,7 +85,7 @@ function showAuth(note) {
 function showPending() {
   const t = setInterval(async () => { try { await loadProfile(); if (S.profile?.active && S.profile.role !== 'pending') { clearInterval(t); enter(); } } catch { /* offline */ } }, 8000);
   mount(root, h('div', { class: 'center' }, h('div', { class: 'auth' },
-    h('span', { class: 'brand' }, 'OMNI', h('i', null, 'TILL')),
+    h('span', { class: 'brand' }, 'OMNI', h('i', null, 'POS')),
     h('h2', null, S.profile && !S.profile.active ? 'Account disabled' : 'Waiting for approval'),
     h('p', { class: 'muted' }, S.profile && !S.profile.active ? 'An admin turned this account off. Ask them to switch it back on.' : `You are signed in as ${S.session.user.email}. An admin must approve your account and give it a role. This page updates by itself.`),
     h('div', { class: 'row gap' }, h('button', { class: 'btn', onclick: async () => { await loadProfile().catch(() => {}); if (S.profile?.active && S.profile.role !== 'pending') { clearInterval(t); enter(); } else toast('Still waiting'); } }, 'Check again'),
@@ -109,7 +109,7 @@ async function enter() {
   if (!hasPin() && !sessionStorage.getItem('ot.pinask')) { sessionStorage.setItem('ot.pinask', '1'); offerPin(); }
 }
 function fatal(msg) {
-  mount(root, h('div', { class: 'center' }, h('div', { class: 'auth' }, h('span', { class: 'brand' }, 'OMNI', h('i', null, 'TILL')), h('p', { class: 'form-err' }, msg),
+  mount(root, h('div', { class: 'center' }, h('div', { class: 'auth' }, h('span', { class: 'brand' }, 'OMNI', h('i', null, 'POS')), h('p', { class: 'form-err' }, msg),
     h('div', { class: 'row gap' }, h('button', { class: 'btn', onclick: () => location.reload() }, 'Retry'), h('button', { class: 'btn', onclick: async () => { await signOut(); showAuth(); } }, 'Sign out')))));
 }
 // Duress PIN or too many wrong PINs: drop the session and local cache silently. Unsent sales stay on the device.
@@ -162,7 +162,7 @@ function renderShell() {
   statusEl = h('button', { class: 'status', onclick: openSyncPanel, 'aria-label': 'Sync status' });
   view = h('main', { id: 'view', tabindex: '-1' });
   mount(root, h('div', { class: 'shell' }, navEl, h('div', { class: 'col-main' },
-    h('header', { class: 'top' }, h('span', { class: 'brand' }, 'OMNI', h('i', null, 'TILL')), h('span', { class: 'grow' }), statusEl,
+    h('header', { class: 'top' }, h('span', { class: 'brand' }, 'OMNI', h('i', null, 'POS')), h('span', { class: 'grow' }), statusEl,
       hasPin() ? h('button', { class: 'icon-btn', 'aria-label': 'Lock now', onclick: lockNow }, icon('lock', 20)) : null),
     view)));
   paintStatus();
