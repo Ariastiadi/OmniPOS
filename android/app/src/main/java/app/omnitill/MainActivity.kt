@@ -26,7 +26,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
 
 /**
- * Thin shell around the OmniTill website. The site is bundled in the APK and served from a private
+ * Thin shell around the Omni POS website. The site is bundled in the APK and served from a private
  * https origin, so it works offline and needs no browser. Network calls go straight to your Supabase project.
  */
 class MainActivity : AppCompatActivity() {
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
         fun printPage() {
             runOnUiThread {
                 val pm = getSystemService(PRINT_SERVICE) as PrintManager
-                pm.print("OmniTill receipt", web.createPrintDocumentAdapter("OmniTill receipt"), PrintAttributes.Builder().build())
+                pm.print("Omni POS receipt", web.createPrintDocumentAdapter("Omni POS receipt"), PrintAttributes.Builder().build())
             }
         }
     }
