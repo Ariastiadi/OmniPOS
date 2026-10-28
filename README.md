@@ -1,4 +1,4 @@
-# OmniTill
+# Omni POS
 
 A point of sale for cafes and small hotels, built as a website and an Android app.
 It works offline, syncs between devices in real time, and keeps your data in **your own** Supabase project.
@@ -12,7 +12,34 @@ It works offline, syncs between devices in real time, and keeps your data in **y
 - **Security:** Row Level Security per role, device PIN lock with a scrambled keypad, duress PIN, audit log, strict Content Security Policy, no secrets in the code.
 - **Design:** Nothing OS style. Monochrome, one red accent, dot-matrix type, thin line icons. No UI framework.
 
-OmniTill is a ground-up rewrite of the earlier SENJA POS (Firebase). It no longer uses Firebase or any Google service.
+Omni POS is a ground-up rewrite of the earlier SENJA POS (Firebase). It no longer uses Firebase or any Google service.
+
+**[Open the web app](https://ariastiadi.github.io/OmniPOS/)** · **[Download the APK](https://github.com/Ariastiadi/OmniPOS/releases/latest)** · **[Add to Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.omnitill%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FAriastiadi%2FOmniPOS%22%2C%22author%22%3A%22Ariastiadi%22%2C%22name%22%3A%22Omni%20POS%22%7D)**
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/01-sell.png" width="230" alt="Sell screen with an order in progress"><br><sub>Sell</sub></td>
+    <td align="center"><img src="docs/screenshots/02-order.png" width="230" alt="Order with table number, quantities and totals"><br><sub>Order</sub></td>
+    <td align="center"><img src="docs/screenshots/03-payment.png" width="230" alt="Payment with cash, QRIS, card or transfer"><br><sub>Payment</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/04-receipt.png" width="230" alt="Printable receipt"><br><sub>Receipt</sub></td>
+    <td align="center"><img src="docs/screenshots/05-hotel.png" width="230" alt="Hotel rooms with guests and housekeeping"><br><sub>Hotel rooms</sub></td>
+    <td align="center"><img src="docs/screenshots/06-folio.png" width="230" alt="Guest folio with room charges"><br><sub>Guest bill</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/07-stock.png" width="230" alt="Ingredient stock"><br><sub>Stock</sub></td>
+    <td align="center"><img src="docs/screenshots/08-reports.png" width="230" alt="Reports: revenue, cost of goods, profit"><br><sub>Reports</sub></td>
+    <td align="center"><img src="docs/screenshots/09-lock.png" width="230" alt="PIN lock with scrambled keypad"><br><sub>PIN lock</sub></td>
+  </tr>
+</table>
+
+On a laptop or tablet the order sits beside the menu. Light and dark follow the device.
+
+<img src="docs/screenshots/10-desktop-sell.png" alt="Sell screen on a laptop, dark theme">
+<img src="docs/screenshots/11-desktop-reports-light.png" alt="Reports on a laptop, light theme">
 
 ## Roles
 
@@ -49,9 +76,8 @@ Enable it once: repository Settings, Pages, Source: **GitHub Actions**.
 
 ### Android app
 
-The included workflow builds a signed APK (a Trusted Web Activity wrapper around the website) and attaches it to a GitHub Release.
-See [`android/README.md`](android/README.md) for the one-time signing key setup. Install the APK from the Releases page, or add the repository to
-[Obtainium](https://github.com/ImranR98/Obtainium) to get updates automatically.
+The included workflow builds a signed APK (a small WebView app with the website bundled inside, so it opens instantly and works offline) and attaches it to a GitHub Release.
+See [`android/README.md`](android/README.md) for the one-time signing key setup. Install the APK from the [Releases page](https://github.com/Ariastiadi/OmniPOS/releases/latest), or [add it to Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.omnitill%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FAriastiadi%2FOmniPOS%22%2C%22author%22%3A%22Ariastiadi%22%2C%22name%22%3A%22Omni%20POS%22%7D) to get updates automatically.
 
 ### Install as an app from the browser
 
@@ -105,7 +131,7 @@ The stand-in mimics only what the app uses (sign-up, password sign-in, REST, pho
 
 ## Credits and licence
 
-- OmniTill is released under the [MIT licence](LICENSE).
+- Omni POS is released under the [MIT licence](LICENSE).
 - It began as a fork of SENJA POS (MIT, andrasulthan-alt) and keeps its feature ideas. The code was rewritten from scratch.
 - [Doto](https://fonts.google.com/specimen/Doto), [Space Mono](https://fonts.google.com/specimen/Space+Mono) and [Inter](https://rsms.me/inter/) are used under the SIL Open Font Licence 1.1.
 - [supabase-js](https://github.com/supabase/supabase-js) is used under the MIT licence.
