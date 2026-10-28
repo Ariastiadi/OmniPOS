@@ -25,8 +25,16 @@ jobs:
       - name: Work out the version
         id: ver
         run: |
-          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then V="${GITHUB_REF_NAME#v}"; else V="1.0.${GITHUB_RUN_NUMBER}"; fi
+          # versionCode comes from the version number (1.2.3 -> 10203), so it always goes up between releases
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            V="${GITHUB_REF_NAME#v}"
+            IFS=. read -r MA MI PA <<< "$V"
+            C=$(( ${MA:-0} * 10000 + ${MI:-0} * 100 + ${PA:-0} ))
+          else
+            V="0.0.${GITHUB_RUN_NUMBER}"; C="${GITHUB_RUN_NUMBER}"
+          fi
           echo "name=$V" >> "$GITHUB_OUTPUT"
+          echo "code=$C" >> "$GITHUB_OUTPUT"
 
       - name: Restore signing key (skipped when the secrets are not set)
         env:
@@ -48,7 +56,7 @@ jobs:
           ANDROID_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon assembleRelease -PappVersion="${{ steps.ver.outputs.name }}" -PappVersionCode="${GITHUB_RUN_NUMBER}"
+          ./gradlew --no-daemon assembleRelease -PappVersion="${{ steps.ver.outputs.name }}" -PappVersionCode="${{ steps.ver.outputs.code }}"
 
       - name: Name the file
         run: |
